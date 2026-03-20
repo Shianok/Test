@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyMlNFazyaZkPoEGdsq2f+g4",
+      "authorship_tag": "ABX9TyOAUmGEoMWhIxx67HCvg9i4",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -28,12 +28,78 @@
     },
     {
       "cell_type": "code",
-      "execution_count": null,
+      "source": [
+        "# Universidad de Costa Rica - Facultad de Ciencias de la Computación [cite: 1, 2]\n",
+        "# Curso: Principios de Informática (C10202) [cite: 3, 4]\n",
+        "# Laboratorio 1 [cite: 5]\n",
+        "\n",
+        "def ejecutar_laboratorio():\n",
+        "    try:\n",
+        "        # Validación de entrada para evitar errores de ejecución [cite: 31]\n",
+        "        n1 = int(input(\"Ingrese el primer número entero: \"))\n",
+        "        n2 = int(input(\"Ingrese el segundo número entero: \"))\n",
+        "\n",
+        "        # Caso 1: Ambos números son pares [cite: 11]\n",
+        "        if n1 % 2 == 0 and n2 % 2 == 0:\n",
+        "            suma = n1 + n2  # [cite: 12]\n",
+        "            if n1 == n2:\n",
+        "                # Si son iguales, solo se realiza la suma [cite: 13]\n",
+        "                print(f\"Resultado de la suma: {suma}\")\n",
+        "            else:\n",
+        "                # Se dividen entre el número más pequeño [cite: 12]\n",
+        "                menor = min(n1, n2)\n",
+        "                print(f\"Resultado (Suma / Menor): {suma / menor}\")\n",
+        "\n",
+        "        # Caso 2: Ambos números son impares [cite: 14]\n",
+        "        elif n1 % 2 != 0 and n2 % 2 != 0:\n",
+        "            if n1 == n2:\n",
+        "                # Si la resta da 0, es un error de operación [cite: 18]\n",
+        "                print(\"Error de operación\")\n",
+        "            else:\n",
+        "                # Al número menor se le resta el mayor [cite: 16]\n",
+        "                resta = min(n1, n2) - max(n1, n2)\n",
+        "\n",
+        "                # Validación de resultado negativo: elevar al cuadrado\n",
+        "                if resta < 0:\n",
+        "                    resultado = resta ** 2\n",
+        "                    print(f\"Resultado negativo detectado. Elevado al cuadrado: {resultado}\")\n",
+        "                else:\n",
+        "                    print(f\"Resultado de la resta: {resta}\")\n",
+        "\n",
+        "        # Caso 3: Uno es par y el otro es impar [cite: 19]\n",
+        "        else:\n",
+        "            # Se verifica la diferencia (valor absoluto para comparar magnitud) [cite: 20]\n",
+        "            diferencia = abs(n1 - n2)\n",
+        "            if diferencia >= 5:  # [cite: 22]\n",
+        "                print(\"Diferencia exitosa\")\n",
+        "            else:  # [cite: 23]\n",
+        "                print(\"Error de diferencia\")\n",
+        "\n",
+        "    except ValueError:\n",
+        "        # Manejo de error si el usuario no ingresa números [cite: 31]\n",
+        "        print(\"Error: Debe ingresar únicamente números enteros.\")\n",
+        "\n",
+        "ejecutar_laboratorio()"
+      ],
       "metadata": {
-        "id": "V-Dqlawf8aX5"
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ona4Jc3E_yTp",
+        "outputId": "8c7068f6-90eb-4a0c-c38a-1bd29a51210b"
       },
-      "outputs": [],
-      "source": []
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese el primer número entero: 4\n",
+            "Ingrese el segundo número entero: 4\n",
+            "Resultado de la suma: 8\n"
+          ]
+        }
+      ]
     }
   ]
 }
